@@ -1,0 +1,1698 @@
+/* =====================================*/
+/*          TABLE OF CONTENTS
+/* =====================================*/
+
+/* 1. Imports
+/* 2. Variables
+/* 3. Typography
+/* 4. Layout
+/* 5. Buttons
+/* 6. Media Queries */
+
+/* =====================================*/
+/*              1. Imports */
+/* =====================================*/
+
+/* Fonts */
+
+@font-face {
+  font-family: "Viper Nora";
+  src: url("../fonts/viper_nora.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Viper Nora";
+  src: url("../fonts/Avenir_Next.ttc") format("tcc");
+}
+
+/* =====================================*/
+/*              2. Variables */
+/* =====================================*/
+
+:root {
+  /* Colors General*/
+  --color-01: #000;
+  --color-02: #262626;
+  --color-03: #ffffff;
+  --color-04: #aaaaaa;
+
+  /* Colors Light Line */
+  --color-LL_01: #b6dddb;
+  --color-LL_02: #d6e4ae;
+  --color-LL_03: #ffeca9;
+  --color-LL_04: #c9c5e3;
+  --color-LL_05: #fac88b;
+
+  /* Colors Core Line */
+  --color-CL_01: #f39ca2;
+  --color-CL_02: #83d0f5;
+  --color-CL_03: #fff271;
+  --color-CL_04: #f7931e;
+  --color-CL_05: #8ec89a;
+
+  /* Colors Intense Line */
+  --color-IL_01: #e72168;
+  --color-IL_02: #e5b647;
+  --color-IL_03: #52ae32;
+  --color-IL_04: #adc875;
+  --color-IL_05: #a48eff;
+
+  /* Gradients */
+  --gradient-01: radial-gradient(circle, rgba(38, 38, 38, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+  /* Box-shadow */
+  --shadow-01: 5px 5px 10px var(--color-01);
+
+  /* Typography */
+  font-size: 16px; /* 1rem = 16px */
+
+  --font-family_01: "Viper Nora";
+  --font-family_02: "Avenir Next";
+
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-thin: 100;
+
+  --font-size-p-mobile: 1rem;
+  --font-size-b-mobile: 1.3rem;
+  --font-size-h2-mobile: clamp(2rem, 15vw, 6rem);
+  --font-size-h3-mobile: clamp(1rem, 10vw, 1.8rem);
+  --font-size-h4-mobile: clamp(0.8rem, 10vw, 1.5rem);
+  --font-size-nav-mobile: 2rem;
+
+  --font-size-p-desktop: clamp(1vh, 3vw, 1.5vh);
+  --font-size-b-desktop: clamp(1vh, 1vw, 2vh);
+  --font-size-h2-desktop: clamp(6vh, 15vw, 10vh);
+  --font-size-h3-desktop: clamp(3vh, 10vw, 3vh);
+  --font-size-h4-desktop: clamp(1vh, 2vw, 2vh);
+  --font-size-nav-desktop: clamp(1vh, 3vw, 8vh);
+
+  --line-height-mobile: calc(var(--font-size-p-mobile) * 1.5);
+  --line-height-desktop: calc(var(--font-size-p-desktop) * 1.5);
+
+  /* Spacing */
+  --padding-side-mobile: 30px;
+  --gap-mobile: 60px;
+  --max-width-mobile: 500px;
+
+  --padding-side-tablet: 5vw;
+  --max-width-tablet: 1024px;
+
+  --padding-side-desktop: 10vw;
+  --max-width-desktop: 1920px;
+
+  /* Border Radius */
+  --border-radius-01: 5px;
+  --border-radius-02: 500px;
+}
+
+/* =====================================*/
+/*             3. Typography */
+/* =====================================*/
+
+body * {
+  color: var(--color-03);
+  font-family: var(--font-family_02), sans-serif;
+  -webkit-hyphens: auto; /* Safari */
+  hyphens: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+h2 {
+  font-family: var(--font-family_01), sans-serif;
+  color: var(--color-04);
+  font-size: var(--font-size-h2-mobile);
+  text-align: center;
+  margin-bottom: 1rem;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+
+h3 {
+  font-size: var(--font-size-h3-mobile);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--font-size-h4-mobile);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+p {
+  font-size: var(--font-size-p-mobile);
+  line-height: var(--line-height-mobile);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial *{
+  color: var(--color-01);
+  text-align: left;
+}
+
+.testimonial p {
+  color: var(--color-01);
+  font-weight: var(--font-weight-medium);
+  text-align: justify;
+}
+
+.testimonial h3{
+  font-size: 1.2rem;
+}
+
+.testimonial p strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-01);
+  text-transform: uppercase;
+}
+
+.customer-name{
+  font-size: .8rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  font-size: var(--font-size-nav-mobile);
+  color: var(--color-03);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+}
+
+b {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-b-mobile);
+  text-transform: uppercase;
+  line-height: calc(var(--font-size-b-mobile) * 2);
+}
+
+.intensity-display b {
+  font-size: calc(var(--font-size-b-mobile) * 2);
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+/* =====================================*/
+/*              4. Layout */
+/* =====================================*/
+
+/* General */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-01);
+}
+
+main {
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  width: 100%;
+}
+
+.hidden {
+  display: none !important; /* Hide elements */
+}
+
+/* Scrollbar */
+
+body *::-webkit-scrollbar {
+  display: none;
+}
+
+body * {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Preloader */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-01);
+  display: grid;
+  place-items: center;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+#preloader svg {
+  width: 50vw;
+  max-width: 200px;
+}
+
+#preloader svg .outer {
+  transform-origin: center;
+  animation: rotate 10s linear infinite;
+}
+
+/* Age Verification */
+#age-verification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(15px) brightness(50%);
+  backdrop-filter: blur(15px) brightness(50%);
+  display: grid;
+  place-items: center;
+  z-index: 99991;
+  overflow: hidden;
+  padding: 0 10vw;
+}
+
+#age-verification .button-container {
+  gap: 2vw;
+}
+
+#age-verification p {
+  max-width: 50ch;
+}
+
+/* Header/ Navigation */
+header {
+  position: fixed;
+  width: 100vw;
+  -webkit-backdrop-filter: blur(15px) brightness(60%);
+  backdrop-filter: blur(15px) brightness(60%);
+  z-index: 9999;
+}
+
+.navbar {
+  height: 10vh;
+  padding: 0 var(--padding-side-mobile);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  width: clamp(3rem, 25vw, 8rem);
+}
+
+.burger {
+  width: 35px;
+  min-width: 35px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.burger.active .line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.burger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active .line:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.burger .line {
+  background-color: var(--color-03);
+  width: 100%;
+  height: 8%;
+  border-radius: var(--border-radius-01);
+  transform-origin: 0 50% 0;
+  transition: all 0.5s ease;
+}
+
+.main-nav {
+  width: 100vw;
+  height: 0vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.main-nav.active {
+  height: 90vh;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+.instagram-logo {
+  width: 25px;
+  max-width: 8vh;
+}
+
+/* Sections General */
+#Wirkstoff,
+#Produkte,
+#Sorten-LL,
+#Sorten-CL,
+#Sorten-IL,
+#Kunden {
+  scroll-margin-top: 5vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-mobile);
+  padding: 10vh var(--padding-side-mobile);
+  max-width: var(--max-width-mobile);
+  margin: 0 auto;
+}
+
+.bg-divider-bottom {
+  background-image: url("../mediafiles/divider/cracked_asphalt_inverted_unten.svg"),
+    url("../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp");
+  background-size: contain, 100vw;
+  background-repeat: no-repeat, repeat;
+  background-position: bottom, top;
+}
+
+.bg-divider-top {
+  background-image: url("../mediafiles/divider/cracked_asphalt_inverted_oben.svg"),
+    url("../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp");
+  background-size: contain, 100vw;
+  background-repeat: no-repeat, repeat;
+  background-position: top, bottom;
+  padding: 10vh 0;
+}
+
+.bg-divider-top-bottom {
+  background-image: url("../mediafiles/divider/cracked_asphalt_inverted_oben.svg"),
+    url("../mediafiles/divider/cracked_asphalt_inverted_unten.svg"),
+    url("../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp");
+  background-size: contain, contain, 100vw;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: top, bottom, bottom;
+  padding: 10vh 0;
+}
+
+/* Impressum */
+
+#Impressum {
+  background-image: url(../mediafiles/mobile/patterns/cracked_asphalt_seamless_pattern.webp);
+  min-height: 100vh;
+  padding: 15vh var(--padding-side-mobile);
+}
+
+/* Home */
+
+#Home {
+  height: 100vh;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+#slogan {
+  width: 40vh;
+  max-width: 300px;
+}
+
+#slogan-text {
+  transform-origin: center;
+}
+
+/* Wirkstoff */
+
+#Wirkstoff {
+  position: relative;
+}
+
+#Wirkstoff .text-container {
+  gap: 5rem;
+}
+
+.thc-p_chemical_compound {
+  top: 0;
+  right: -20%;
+  width: 70vw;
+  opacity: 35%;
+  transform: rotate(-20deg);
+  position: absolute;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.flex-container-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#Wirkstoff p i {
+  font-size: calc(var(--font-size-p-mobile) * 0.7);
+  color: var(--color-04);
+}
+
+/* Vergleich */
+
+.flex-container.comparison {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.comparison .flex-row {
+  gap: 1rem;
+}
+
+.flex-row-element {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.flex-row-element img {
+  height: 5rem;
+}
+
+.comparison div {
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-01);
+}
+
+.comparison .flex-row div:nth-child(odd) {
+  background-color: var(--color-01);
+  border-radius: var(--border-radius-01);
+  border: 1px solid var(--color-03);
+  color: var(--color-03);
+  padding: 0.5rem;
+  hyphens: manual;
+}
+
+.comparison .flex-row:nth-child(odd) div:nth-child(odd) {
+  background-color: var(--color-03);
+  color: var(--color-02);
+}
+
+/* Grafik Chemische Verbindung */
+.chemical_compound img {
+  height: 20vh;
+  animation: levitate 4s ease-in-out 2s infinite;
+}
+
+/* Produkte */
+
+#Produkte {
+  position: relative;
+}
+
+.container-desktop {
+  display: none;
+}
+
+#Produkte .flex-container {
+  gap: 1.8rem;
+}
+
+#Produkte .flex-container div {
+  font-size: var(--font-size-p-mobile);
+}
+
+#Produkte .product-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(var(--shadow-01));
+  margin-top: 2rem;
+}
+
+.product-img.vape_1ml {
+  background-image: url("../mediafiles/mobile/product-images/vapes/4twenty_vape_1ml.webp");
+}
+
+.product-img.vape_2ml {
+  background-image: url("../mediafiles/mobile/product-images/vapes/4twenty_vape_2ml.webp");
+}
+
+/*Technische Daten*/
+.technical-data .product-data-container {
+  border-top: 1px solid var(--color-03);
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-data-item{
+  border-radius: var(--border-radius-02);
+  min-width: 100%;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  flex: 1 1 0px;
+}
+
+.product-data-item:hover{
+  border-radius: var(--border-radius-02);
+  background-color: var(--color-03);
+  box-shadow: var(--shadow-01);
+}
+
+.product-data-item:hover *{
+  color: var(--color-01)
+}
+
+.product-data-item b{
+  font-size: 1.3rem;
+}
+
+/* 3D Modell */
+
+#container3D{
+  height: 50%;
+}
+
+#container3D canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Geschmackssorten Übersicht */
+
+.intensity-display {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.intensity-display .line {
+  background-color: var(--color-03);
+  width: 100%;
+  height: 1px;
+  z-index: 99999;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.slider {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory; /*scroll-snap*/
+  scroll-behavior: smooth;
+}
+
+.slider-element {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start; /*scroll-snap*/
+}
+
+.slider-container .slider-arrows {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.slider-container .slider-arrows .arrow {
+  width: 10vw;
+  max-width: 50px;
+  aspect-ratio: 1/1;
+  pointer-events: all;
+}
+
+.slider-container .slider-arrows .arrow:nth-child(1) {
+  transform: scale(-1);
+}
+
+.dots {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.dot {
+  width: 0.8rem;
+  aspect-ratio: 1/1;
+  background-color: var(--color-03);
+  border-radius: 50%;
+  opacity: 50%;
+}
+
+.dot.active {
+  opacity: 100%;
+}
+
+.flavors-overview .slider-element {
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flavors-overview .flavor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.flavors-overview .circle {
+  position: relative;
+  width: 50vw;
+  max-width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: var(--shadow-01);
+  z-index: 1;
+  overflow: visible;
+}
+
+.flavors-overview .circle img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 90%;
+  transform: translate(-50%, 30%);
+  filter: drop-shadow(var(--shadow-01));
+  z-index: 2;
+}
+
+.flavors-overview .leaf img {
+  height: 5rem;
+}
+
+/* Light Line */
+
+#Sorten-LL .slider-element:nth-child(1) .circle {
+  background-color: var(--color-LL_01);
+}
+
+#Sorten-LL .slider-element:nth-child(2) .circle {
+  background-color: var(--color-LL_02);
+}
+
+#Sorten-LL .slider-element:nth-child(3) .circle {
+  background-color: var(--color-LL_03);
+  transform: scaleX(-1);
+}
+
+#Sorten-LL .slider-element:nth-child(4) .circle {
+  background-color: var(--color-LL_04);
+}
+
+#Sorten-LL .slider-element:nth-child(5) .circle {
+  background-color: var(--color-LL_05);
+}
+
+/* Core Line */
+
+#Sorten-CL .slider-element:nth-child(1) .circle {
+  background-color: var(--color-CL_01);
+}
+
+#Sorten-CL .slider-element:nth-child(2) .circle {
+  background-color: var(--color-CL_02);
+}
+
+#Sorten-CL .slider-element:nth-child(3) .circle {
+  background-color: var(--color-CL_03);
+}
+
+#Sorten-CL .slider-element:nth-child(4) .circle {
+  background-color: var(--color-CL_04);
+}
+
+#Sorten-CL .slider-element:nth-child(5) .circle {
+  background-color: var(--color-CL_05);
+}
+
+/* Intense Line */
+
+#Sorten-IL .slider-element:nth-child(1) .circle {
+  background-color: var(--color-IL_01);
+}
+
+#Sorten-IL .slider-element:nth-child(2) .circle {
+  background-color: var(--color-IL_02);
+}
+
+#Sorten-IL .slider-element:nth-child(3) .circle {
+  background-color: var(--color-IL_03);
+}
+
+#Sorten-IL .slider-element:nth-child(4) .circle {
+  background-color: var(--color-IL_04);
+}
+
+#Sorten-IL .slider-element:nth-child(5) .circle {
+  background-color: var(--color-IL_05);
+}
+
+/* Produkt-Slider */
+
+.product-slider .slider-element {
+  gap: 2rem;
+  position: relative;
+}
+
+.product-slider .product-slider-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  z-index: -1;
+}
+
+.product-slider .product-img {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 5/4;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+/* Produktbilder Mobile */
+
+/* 10-OH */
+#Produkte-IL .slider-element:nth-child(1) .product-img {
+  background-image: url("../mediafiles/mobile/product-images/intense-line/4twenty_product-image_himbeere.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(2) .product-img {
+  background-image: url("../mediafiles/mobile/product-images/intense-line/4twenty_product-image_honig-vanille.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(3) .product-img {
+  background-image: url("../mediafiles/mobile/product-images/intense-line/4twenty_product-image_kaktus.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(4) .product-img {
+  background-image: url("../mediafiles/mobile/product-images/intense-line/4twenty_product-image_limette_+_minze.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(5) .product-img {
+  background-image: url("../mediafiles/mobile/product-images/intense-line/4twenty_product-image_tutti-frutti.webp");
+}
+
+/* Slider Hintergrundbilder*/
+
+#Produkte-LL .slider-element,
+#Produkte-CL .slider-element,
+#Produkte-IL .slider-element {
+  padding-top: 20vh;
+}
+
+/* 10-OH */
+#Produkte-IL .slider-element:nth-child(1) .product-slider-bg {
+  background-image: url("../mediafiles/mobile/product-slider_bg/product-slider_bg_himbeere.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(2) .product-slider-bg {
+  background-image: url("../mediafiles/mobile/product-slider_bg/product-slider_bg_vanille_+_honig.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(3) .product-slider-bg {
+  background-image: url("../mediafiles/mobile/product-slider_bg/product-slider_bg_kaktus.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(4) .product-slider-bg {
+  background-image: url("../mediafiles/mobile/product-slider_bg/product-slider_bg_limette+minze.webp");
+}
+
+#Produkte-IL .slider-element:nth-child(5) .product-slider-bg {
+  background-image: url("../mediafiles/mobile/product-slider_bg/product-slider_bg_tutti_frutti.webp");
+}
+
+/* Kunden */
+
+#Kunden .slider-element {
+  gap: 2rem;
+}
+
+#Kunden .customer-profile {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#Kunden .profile-pic {
+  position: relative;
+  background-color: var(--color-04);
+  border-radius: var(--border-radius-02);
+  overflow: hidden;
+  width: 20vw;
+  max-width: 10vh;
+  aspect-ratio: 1/1;
+}
+
+.customer-profile img {
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+}
+
+#Kunden .testimonial {
+  position: relative;
+  background-color: var(--color-03);
+  width: 60%;
+  max-width: max-content;
+  padding: 1rem;
+  border-radius: var(--border-radius-01);
+  opacity: 60%;
+}
+
+#Kunden .testimonial::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  transform: translateY(99%);
+  width: 5vw;
+  max-width: 20px;
+  aspect-ratio: 4/5;
+  background-color: var(--color-03);
+  clip-path: polygon(100% 100%, 0 0, 100% 0);
+}
+
+#Kunden .rating {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+  color: var(--color-IL_04);
+}
+
+#Kunden .rating .star {
+  position: static;
+  width: 5vw;
+  max-width: 3vh;
+  transform: none;
+}
+
+#Kunden .slider-element {
+  justify-content: flex-end;
+}
+
+/* Footer */
+
+footer {
+  display: none;
+}
+
+/* =====================================*/
+/*              5. Buttons */
+/* =====================================*/
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  filter: drop-shadow(var(--shadow-01));
+}
+
+.button-container button {
+  background-color: var(--color-01);
+  color: var(--color-03);
+  padding: 1rem 2rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-p-mobile);
+  text-transform: uppercase;
+}
+
+.button-container button:nth-child(1) {
+  border-radius: var(--border-radius-02) 0 0 var(--border-radius-02);
+}
+
+.button-container button:nth-child(2) {
+  border-radius: 0 var(--border-radius-02) var(--border-radius-02) 0;
+}
+
+.button-container button.active {
+  background-color: var(--color-03);
+  color: var(--color-01);
+}
+
+.btn-01 {
+  font-size: var(--font-size-p-mobile);
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  padding: 2vh 1.5rem;
+  border: 1px solid var(--color-03);
+}
+
+.btn-02 {
+  font-size: var(--font-size-p-mobile);
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  padding: 2vh 5vw;
+  border: 1px solid var(--color-03);
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 2vh;
+}
+
+/* Hover Effekte */
+
+.btn-01:hover,
+.btn-02:hover {
+  background-color: var(--color-03);
+  color: var(--color-01);
+  cursor: pointer;
+}
+
+/* =====================================*/
+/*          6. Animationen */
+/* =====================================*/
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================*/
+/*          7. Media Queries */
+/* =====================================*/
+
+/* Very small devices */
+@media only screen and (max-width: 300px) {
+  .effect-visualization {
+    background-image: none;
+  }
+}
+
+/* Tablet (hochkant) */
+@media screen and (min-width: 480px) {
+  /* General */
+  section {
+    padding: 10vh var(--padding-side-tablet);
+    max-width: var(--max-width-tablet);
+  }
+
+  .navbar {
+    padding: 0 var(--padding-side-tablet);
+  }
+
+  /* Hintergründe */
+  #Impressum {
+    background-image: url("../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp");
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+  }
+
+  .bg-divider-bottom {
+    background-image: url("../mediafiles/divider/cracked_asphalt_inverted_unten.svg"),
+      url("../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp");
+  }
+
+  .bg-divider-top {
+    background-image: url("../mediafiles/divider/cracked_asphalt_inverted_oben.svg"),
+      url("../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp");
+  }
+
+  .bg-divider-top-bottom {
+    background-image: url("../mediafiles/divider/cracked_asphalt_inverted_oben.svg"),
+      url("../mediafiles/divider/cracked_asphalt_inverted_unten.svg"),
+      url("../mediafiles/tablet/patterns/cracked_asphalt_seamless_pattern.webp");
+  }
+
+  /* Produktbilder */
+
+  /* Vapes */
+  .product-img.vape_1ml {
+    background-image: url("../mediafiles/desktop/product-images/vapes/4twenty_vape_1ml.webp");
+  }
+
+  .product-img.vape_2ml {
+    background-image: url("../mediafiles/desktop/product-images/vapes/4twenty_vape_2ml.webp");
+  }
+
+  .product-data-item{
+    min-width: 150px;
+    max-width: max-content;
+  }
+
+  /* Produktbilder Tablet */
+
+  /* 10-OH */
+  #Produkte-IL .slider-element:nth-child(1) .product-img {
+    background-image: url("../mediafiles/tablet/product-images/intense-line/4twenty_product-image_himbeere.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(2) .product-img {
+    background-image: url("../mediafiles/tablet/product-images/intense-line/4twenty_product-image_honig-vanille.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(3) .product-img {
+    background-image: url("../mediafiles/tablet/product-images/intense-line/4twenty_product-image_kaktus.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(4) .product-img {
+    background-image: url("../mediafiles/tablet/product-images/intense-line/4twenty_product-image_limette_+_minze.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(5) .product-img {
+    background-image: url("../mediafiles/tablet/product-images/intense-line/4twenty_product-image_tutti-frutti.webp");
+  }
+
+  /* Product-Slider Hintergrundbilder*/
+
+  /* 10-OH */
+  #Produkte-IL .slider-element:nth-child(1) .product-slider-bg {
+    background-image: url("../mediafiles/tablet/product-slider_bg/product-slider_bg_himbeere.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(2) .product-slider-bg {
+    background-image: url("../mediafiles/tablet/product-slider_bg/product-slider_bg_vanille_+_honig.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(3) .product-slider-bg {
+    background-image: url("../mediafiles/tablet/product-slider_bg/product-slider_bg_kaktus.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(4) .product-slider-bg {
+    background-image: url("../mediafiles/tablet/product-slider_bg/product-slider_bg_limette+minze.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(5) .product-slider-bg {
+    background-image: url("../mediafiles/tablet/product-slider_bg/product-slider_bg_tutti_frutti.webp");
+  }
+}
+
+/* Desktop/ Laptop/  Tablet (Landscape) */
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  /* Typography */
+  p {
+    font-size: var(--font-size-p-desktop);
+    line-height: var(--line-height-desktop);
+  }
+
+  b {
+    font-size: var(--font-size-b-desktop);
+    line-height: calc(var(--font-size-b-desktop) * 2);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2-desktop);
+    margin-bottom: 4vh;
+  }
+
+  h3 {
+    font-size: var(--font-size-h3-desktop);
+    margin-bottom: 2vh;
+  }
+
+  h4 {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .main-nav a {
+    font-size: var(--font-size-nav-desktop);
+  }
+
+  .intensity-display {
+    line-height: 2.5rem;
+  }
+
+  .intensity-display b {
+    font-size: calc(var(--font-size-b-mobile) * 4);
+  }
+
+  /* General */
+
+  /* Container */
+  main {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Item */
+  .section-bg {
+    min-width: 100vw;
+  }
+
+  section {
+    height: 100vh;
+    width: 100vw;
+    max-width: var(--max-width-desktop);
+    margin: 0 auto;
+    gap: 0;
+    padding: 10vh var(--padding-side-desktop);
+    align-items: center;
+    gap: 4vh;
+  }
+
+  /* Hintergründe */
+
+  #Impressum {
+    padding: 15vh var(--padding-side-desktop);
+    background-image: url("../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp");
+    background-size: 100vw 100vh;
+  }
+
+  .bg-fullscreen {
+    background-image: url("../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp");
+    background-size: 100vw 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+
+  .bg-divider-left-right {
+    background-image: url("../mediafiles/desktop/background-images/cracked_asphalt_left-right.webp");
+    background-size: 100vw 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+
+  .bg-divider-top-bottom.bg-fullscreen.bg-double-fullscreen {
+    display: flex;
+    min-width: 200vw;
+    gap: 0px;
+  }
+
+  .bg-divider-top-bottom.bg-fullscreen.bg-double-fullscreen section {
+    margin: 0;
+    min-width: 100vw;
+  }
+
+  .bg-double-fullscreen section {
+    width: 100vw;
+    flex-grow: 1;
+    background-image: url("../mediafiles/desktop/background-images/cracked_asphalt_fullscreen.webp");
+    background-size: 100vw 100vh;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+
+  /* Header/ Navigation */
+
+  header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background-color 0.8s ease-out;
+    padding: 1vh 0;
+  }
+
+  header.active {
+    background-color: var(--color-01);
+  }
+
+  .burger {
+    width: 5vh;
+    max-width: 40px;
+    min-width: unset;
+  }
+
+  .navbar .logo {
+    width: 15vh;
+    max-width: 130px;
+    min-width: unset;
+  }
+
+  .navbar {
+    width: 80vw;
+    max-width: var(--max-width-desktop);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .main-nav ul {
+    gap: 3vh;
+  }
+
+  .main-nav .copyright {
+    display: none;
+  }
+
+  .main-nav .instagram-link {
+    display: none;
+  }
+
+  /* Hover Effekte */
+  .main-nav a:hover {
+    color: var(--color-01);
+    text-shadow: 1px 1px 1px var(--color-03), 1px -1px 1px var(--color-03),
+      -1px 1px 1px var(--color-03), -1px -1px 1px var(--color-03);
+  }
+
+  /* Home */
+
+  #slogan {
+    height: 30vh;
+    max-width: 400px;
+  }
+
+  /* Wirkstoff */
+
+  #Wirkstoff p {
+    max-width: 35vw;
+  }
+
+  #Wirkstoff .text-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3%;
+  }
+
+  #Wirkstoff p i {
+    font-size: calc(var(--font-size-p-desktop) * 0.8);
+  }
+
+  .comparison {
+    font-size: var(--font-size-p-desktop);
+    gap: 1vh;
+  }
+
+  .comparison .flex-row {
+    justify-content: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+  }
+
+  .comparison .flex-row div:nth-child(odd) {
+    padding: 1vh 1.5vh;
+  }
+
+  .effect-visualization img {
+    height: 6vh;
+  }
+
+  .effect-visualization {
+    padding: 5vh 0;
+    height: 20vh;
+    max-width: 55vh;
+    aspect-ratio: 16/9;
+  }
+
+  .effect-visualization .flex-row-element {
+    gap: 2vh;
+  }
+
+  /* Produkte */
+
+  #Produkte .button-container {
+    display: none;
+  }
+
+  #Produkte .container-mobile {
+    display: none;
+  }
+
+  #Produkte .container-desktop {
+    display: flex;
+  }
+
+  #Produtkte .container-desktop img {
+    flex-grow: 1;
+  }
+
+  #Produkte .container-desktop .flex-container-row:first-child {
+    justify-content: space-around;
+  }
+
+  #Produkte .table {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    text-wrap: nowrap;
+    font-size: var(--font-size-b-desktop);
+  }
+
+  #Produkte .table-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vh 0;
+  }
+
+  #Produkte .table-row div {
+    padding: 0 2rem;
+  }
+
+  #Produkte .table-row .line {
+    width: 3rem;
+    height: 2px;
+    background-color: var(--color-03);
+  }
+
+  #Produkte img {
+    width: 100%;
+    max-width: 45vh;
+  }
+
+  /* Geschmackssorten Übersicht */
+
+  .intensity-display {
+    width: 100%;
+    max-width: var(--max-width-desktop);
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-size: clamp(2vh, 4vw, 4vh);
+  }
+
+  .intensity-display b {
+    font-size: clamp(2vh, 4vw, 6vh);
+    line-height: 4vh;
+  }
+
+  .flavors-overview .slider {
+    overflow: visible;
+    justify-content: space-around;
+    width: 80vw;
+  }
+
+  .flavors-overview .slider-element {
+    gap: 2vh;
+    min-width: 15vw;
+  }
+
+  .flavors-overview .flavor {
+    gap: 6vh;
+  }
+
+  .flavors-overview .dots,
+  .flavors-overview .slider-arrows {
+    display: none;
+  }
+
+  .flavors-overview .circle {
+    width: 10vw;
+    max-width: 20vh;
+  }
+
+  .flavors-overview .leaf img {
+    height: 8vh;
+  }
+
+  /* Hover Effekte */
+  .flavors-overview .slider-element .circle img {
+    transition: all 0.5s ease;
+  }
+
+  .flavors-overview .slider-element:hover .circle {
+    transform: translate(0, +5%) scale(1.1);
+  }
+
+  .flavors-overview .slider-element:hover .circle img {
+    top: +10%;
+    left: 0;
+    transform: rotate(5deg);
+  }
+
+  /* Produkt-Slider */
+
+  .slider {
+    overflow: hidden;
+  }
+
+  .product-slider .slider-element {
+    gap: 2vh;
+  }
+
+  .product-slider .slider-container {
+    max-width: var(--max-width-desktop);
+  }
+
+  .slider-container .slider-arrows {
+    width: 60vw;
+    max-width: var(--max-width-desktop);
+  }
+
+  #Produkte-LL .slider-container,
+  #Produkte-CL .slider-container,
+  #Produkte-IL .slider-container {
+    gap: 1vh;
+  }
+
+  #Produkte-LL .slider-element,
+  #Produkte-CL .slider-element,
+  #Produkte-IL .slider-element {
+    padding-top: unset;
+  }
+
+  #Produkte-LL .slider-container,
+  #Produkte-CL .slider-container,
+  #Produkte-IL .slider-container {
+    padding-top: 2vh;
+  }
+
+  #Produkte-CL,
+  #Produkte-IL {
+    padding: 10vh var(--padding-side-desktop);
+  }
+
+  .btn-01 {
+    font-size: var(--font-size-p-desktop);
+  }
+
+  .btn-02 {
+    font-size: var(--font-size-p-desktop);
+  }
+
+  .dots {
+    gap: 1vh;
+  }
+
+  .dot {
+    width: 1vh;
+    max-width: 20px;
+  }
+
+  .slider-container .slider-arrows .arrow {
+    max-width: 4vh;
+  }
+
+  .product-slider .product-slider-bg {
+    background-position: top right;
+    background-size: cover;
+    max-width: var(--max-width-desktop);
+    margin: 0 auto;
+  }
+
+  .product-slider .product-img {
+    width: 70vh;
+    max-width: 50vw;
+  }
+  /* Produktbilder Desktop */
+
+  /* 10-OH */
+  #Produkte-IL .slider-element:nth-child(1) .product-img {
+    background-image: url("../mediafiles/desktop/product-images/intense-line/4twenty_product-image_himbeere.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(2) .product-img {
+    background-image: url("../mediafiles/desktop/product-images/intense-line/4twenty_product-image_honig-vanille.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(3) .product-img {
+    background-image: url("../mediafiles/desktop/product-images/intense-line/4twenty_product-image_kaktus.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(4) .product-img {
+    background-image: url("../mediafiles/desktop/product-images/intense-line/4twenty_product-image_limette_+_minze.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(5) .product-img {
+    background-image: url("../mediafiles/desktop/product-images/intense-line/4twenty_product-image_tutti-frutti.webp");
+  }
+
+  /* Product-Slider Hintergrundbilder*/
+
+  /* 10-OH */
+  #Produkte-IL .slider-element:nth-child(1) .product-slider-bg {
+    background-image: url("../mediafiles/desktop/product-slider_bg/product-slider_bg_himbeere.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(2) .product-slider-bg {
+    background-image: url("../mediafiles/desktop/product-slider_bg/product-slider_bg_vanille_+_honig.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(3) .product-slider-bg {
+    background-image: url("../mediafiles/desktop/product-slider_bg/product-slider_bg_kaktus.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(4) .product-slider-bg {
+    background-image: url("../mediafiles/desktop/product-slider_bg/product-slider_bg_limette+minze.webp");
+  }
+
+  #Produkte-IL .slider-element:nth-child(5) .product-slider-bg {
+    background-image: url("../mediafiles/desktop/product-slider_bg/product-slider_bg_tutti_frutti.webp");
+  }
+
+  /* Kunden */
+  #Kunden .slider-container{
+    width: 100%;
+    margin-top: 10vh;
+  }
+
+  #Kunden .slider {
+    /* width: unset; */
+    width: 100%;
+  }
+
+  #Kunden .slider-element {
+    min-width: 25%;
+  }
+
+  #Kunden .dots,
+  #Kunden .slider-arrows {
+    display: none;
+  }
+
+  #Kunden .testimonial {
+    width: 85%;
+  }
+
+  /* Footer */
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: block;
+    font-size: 1rem;
+    z-index: 999;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0) 100%);
+    padding: 4vh 0;
+  }
+
+  footer .flex-container-row {
+    width: 80vw;
+    max-width: var(--max-width-desktop);
+    align-items: center;
+    gap: 10%;
+    margin: 0 auto;
+  }
+
+  footer i {
+    font-size: 2.5rem;
+  }
+
+  footer .scrollbar-track {
+    position: relative;
+    flex-grow: 4;
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 5px;
+    flex-grow: 4;
+    border-radius: 100000000px;
+    overflow: hidden;
+    filter: drop-shadow(var(--shadow-01));
+  }
+
+  footer .scrollbar-handle {
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 100000000px;
+  }
+
+  footer .instagram-link {
+    font-size: clamp(4vh, 2vw, 6vh);
+  }
+
+  footer .copyright {
+    font-size: var(--font-size-b-desktop);
+  }
+
+  /* Hover Effekte */
+
+  footer .instagram-link:hover {
+    transform: scale(1.1);
+  }
+}
